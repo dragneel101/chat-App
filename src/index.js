@@ -18,10 +18,6 @@ const Filter = require('bad-words')
 app.use(express.static(publicDirectoryPath))
 
 io.on('connection', (socket) => {
-    console.log('New webSocket connection')
-
-
-
 
     socket.on('join', ({ username, room }, callback) => {
         const { error, user } = addUser({ id: socket.id, username, room })
